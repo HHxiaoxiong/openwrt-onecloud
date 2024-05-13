@@ -21,16 +21,16 @@ rm -f /usr/lib/lua/luci/view/admin_status/index/linkease.htm
 
 ln -sf /sbin/ip /usr/bin/ip
 
-sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' /etc/shadow
+
 
 sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
 echo "DISTRIB_REVISION='v$(date +'%Y.%m')'" >> /etc/openwrt_release
 sed -i '/DISTRIB_RELEASE/d' /etc/openwrt_release
 echo "DISTRIB_RELEASE='v$(date +'%Y.%m.%d')'" >> /etc/openwrt_release
 sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
-echo "DISTRIB_DESCRIPTION='Build by innmonkey '" >> /etc/openwrt_release
+echo "DISTRIB_DESCRIPTION='Build by bitbears '" >> /etc/openwrt_release
 
-sed -i 's/LuCI openwrt-23.05 branch/ImmortalWrt/g' /usr/lib/lua/luci/version.lua
+sed -i 's/LuCI openwrt-23.05 branch/BitWrt/g' /usr/lib/lua/luci/version.lua
 sed -i '/luciversion/d' /usr/lib/lua/luci/version.lua
 echo "luciversion ='23.05'" >> /usr/lib/lua/luci/version.lua
 
