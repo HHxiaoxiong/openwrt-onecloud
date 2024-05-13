@@ -42,10 +42,7 @@ sed -i 's/BitWrt/OpenWrt/g' package/base-files/files/bin/config_generate
 sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
 sudo rm -rf package/base-files/files/etc/banner
-
-sed -i "s/%D %V %C/%D $(TZ=UTC-8 date +%Y.%m.%d)/" package/base-files/files/etc/openwrt_release
-
-sed -i "s/%R/by shiyu1314/" package/base-files/files/etc/openwrt_release
+cp -f $GITHUB_WORKSPACE/sh/99-default-settings package/emortal/default-settings/files/99-default-settings
 
 date=$(date +"%Y-%m-%d")
 echo "                                                    " >> package/base-files/files/etc/banner
