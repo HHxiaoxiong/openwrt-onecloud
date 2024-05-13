@@ -37,7 +37,8 @@ cp -rf dnsmasq package/network/services/
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
-sed -i "s/192.168.1.1/192.168.2.2/" package/base-files/files/bin/config_generate
+sed -i "s/192.168.1.1/192.168.2.200/" package/base-files/files/bin/config_generate
+sed -i 's/BitWrt/OpenWrt/g' package/base-files/files/bin/config_generate
 sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
 
 sudo rm -rf package/base-files/files/etc/banner
@@ -48,11 +49,11 @@ sed -i "s/%R/by shiyu1314/" package/base-files/files/etc/openwrt_release
 
 date=$(date +"%Y-%m-%d")
 echo "                                                    " >> package/base-files/files/etc/banner
-echo "  _______                     ________        __" >> package/base-files/files/etc/banner
-echo " |       |.-----.-----.-----.|  |  |  |.----.|  |_" >> package/base-files/files/etc/banner
-echo " |   -   ||  _  |  -__|     ||  |  |  ||   _||   _|" >> package/base-files/files/etc/banner
-echo " |_______||   __|_____|__|__||________||__|  |____|" >> package/base-files/files/etc/banner
-echo "          |__|" >> package/base-files/files/etc/banner
+echo "         ____  _ _ __        __    _   " >> package/base-files/files/etc/banner
+echo "        | __ )(_) |\ \      / / __| |_ " >> package/base-files/files/etc/banner
+echo "        |  _ \| | __\ \ /\ / / '__| __|" >> package/base-files/files/etc/banner
+echo "        | |_) | | |_ \ V  V /| |  | |_ " >> package/base-files/files/etc/banner
+echo "        |____/|_|\__| \_/\_/ |_|   \__|" >> package/base-files/files/etc/banner
 echo " -----------------------------------------------------" >> package/base-files/files/etc/banner
-echo "         %D ${date} by shiyu1314                     " >> package/base-files/files/etc/banner
+echo "         %D ${date} by bitbears                     " >> package/base-files/files/etc/banner
 echo " -----------------------------------------------------" >> package/base-files/files/etc/banner
