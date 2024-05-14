@@ -45,6 +45,11 @@ sed -i 's|OpenWrt|BitWrt|g' package/base-files/image-config.in
 sudo rm -rf package/base-files/files/etc/banner
 cp -f $GITHUB_WORKSPACE/sh/99-default-settings package/emortal/default-settings/files/99-default-settings
 
+echo "old:"
+cat $GITHUB_WORKSPACE/sh/99-default-settings
+echo "new:"
+cat package/emortal/default-settings/files/99-default-settings
+
 date=$(date +"%Y-%m-%d")
 echo "                                                    " >> package/base-files/files/etc/banner
 echo "         ____  _ _ __        __    _   " >> package/base-files/files/etc/banner
