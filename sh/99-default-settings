@@ -23,14 +23,9 @@ ln -sf /sbin/ip /usr/bin/ip
 
 
 
-sed -i '/DISTRIB_REVISION/d' /etc/openwrt_release
-echo "DISTRIB_REVISION='v$(date +'%Y.%m')'" >> /etc/openwrt_release
-sed -i '/DISTRIB_RELEASE/d' /etc/openwrt_release
-echo "DISTRIB_RELEASE='v$(date +'%Y.%m.%d')'" >> /etc/openwrt_release
-sed -i '/DISTRIB_DESCRIPTION/d' /etc/openwrt_release
-echo "DISTRIB_DESCRIPTION='Build by bitbears '" >> /etc/openwrt_release
+sed -i 's/OpenWrt/BitWrt/g' /etc/openwrt_release
 
-sed -i 's/LuCI openwrt-23.05 branch/BitWrt/g' /usr/lib/lua/luci/version.lua
+sed -i 's/OpenWrt/BitWrt/g' /usr/lib/lua/luci/version.lua
 sed -i '/luciversion/d' /usr/lib/lua/luci/version.lua
 echo "luciversion ='23.05'" >> /usr/lib/lua/luci/version.lua
 
