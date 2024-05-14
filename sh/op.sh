@@ -38,8 +38,9 @@ cp -rf dnsmasq package/network/services/
 ./scripts/feeds install -a
 
 sed -i "s/192.168.1.1/192.168.2.200/" package/base-files/files/bin/config_generate
-sed -i 's/BitWrt/OpenWrt/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/BitWrt/g' package/base-files/files/bin/config_generate
 sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
+sed -i 's|OpenWrt|BitWrt|g' package/base-files/image-config.in
 
 sudo rm -rf package/base-files/files/etc/banner
 cp -f $GITHUB_WORKSPACE/sh/99-default-settings package/emortal/default-settings/files/99-default-settings
