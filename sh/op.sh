@@ -44,7 +44,7 @@ sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.
 
 
 sudo rm -rf package/base-files/files/etc/banner
-cp -f $GITHUB_WORKSPACE/sh/99-default-settings package/emortal/default-settings/files/99-default-settings
+sudo cp -f $GITHUB_WORKSPACE/sh/99-default-settings package/emortal/default-settings/files/99-default-settings
 
 echo "old:"
 cat $GITHUB_WORKSPACE/sh/99-default-settings
