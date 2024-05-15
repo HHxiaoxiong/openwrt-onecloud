@@ -13,6 +13,12 @@
 	model = "Thunder OneCloud";
 	compatible = "thunder,onecloud", "amlogic,meson8b";
 
+	cpufreq-meson {
+                compatible = "amlogic,cpufreq-meson";
+                syspll_fixed;
+                fixpll_target = <0x6e263e00>;
+                status = "okay";
+        };
 	cpu_opp_table: opp-table {
 		compatible = "operating-points-v2";
 		opp-shared;
