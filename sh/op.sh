@@ -37,7 +37,7 @@ cp -rf dnsmasq package/network/services/
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
-sed -i "s/192.168.1.1/192.168.2.200/" package/base-files/files/bin/config_generate
+sed -i "s/192.168.1.1/10.0.0.254/" package/base-files/files/bin/config_generate
 sed -i 's/OpenWrt/BitWrt/g' package/base-files/files/bin/config_generate
 sed -i 's/default \"OpenWrt\"/default \"BitWrt\"/g' package/base-files/image-config.in
 sed -i 's|/bin/login|/bin/login -f root|g' feeds/packages/utils/ttyd/files/ttyd.config
